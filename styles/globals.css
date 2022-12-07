@@ -2,9 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-    background-color: black;
+@font-face {
+    font-family: 'SF Fedora';
+    src: url(../fonts/SF\ Fedora.ttf);
 }
-.css_text {
-    color: aqua;
+
+
+
+html {
+    background-color: white;
+}
+
+@layer base {
+    html {
+        font-family: SF Fedora, sans-serif;
+    }
 }

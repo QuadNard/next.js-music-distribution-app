@@ -1,6 +1,6 @@
 import React from 'react'
 
 function Header() {
-  return <header className='text-4xl text-center css_text'>   I am Header</header>;
+  return <header className=' text-pink-900 font-sans'>   I am Header  </header>;
 }
 export default Header;
