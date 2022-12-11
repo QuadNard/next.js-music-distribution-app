@@ -1,8 +1,10 @@
 import React from 'react'
+import MyVideo from './components/Myvideo';
+
 
 function Home() {
-  return  <div className='text-4xl text-center font-SF Fedora'>Home
-   <h1 className=' text-red-400 '>This is simple but a test</h1>
+  return  <div className='main'>
+      <MyVideo />
   </div>
   
 }
