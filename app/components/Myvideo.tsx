@@ -2,8 +2,8 @@ import React from "react";
 
 
 const MyVideo = () => (
-<video
-id="background-video"
+<video className="bkg h-full w-full absolute object-cover"
+id="bg"
 loop
 autoPlay
 muted
