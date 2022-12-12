@@ -1,11 +1,17 @@
-import React from 'react'
-import MyVideo from './components/Myvideo';
+import type { NextPage } from "next";
+import Header from "./components/Header";
+import MyVideo from "./components/Myvideo";
 
 
-function Home() {
-  return  <div className='main'>
+const Home: NextPage = () => {
+ return (
+  <div className="">
+    <Header />
+    <main>
       <MyVideo />
+    </main>
   </div>
-  
-}
+ )
+};
+
 export default Home;
