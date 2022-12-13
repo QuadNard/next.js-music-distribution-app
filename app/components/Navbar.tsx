@@ -4,7 +4,7 @@ import {AiOutlineSearch, AiOutlineShopping } from 'react-icons/ai'
 
 function Navbar() {
   return (
-  <nav className="sticky top-0 z-30 flex w-full items-center justify-between p-4 ">
+  <nav className="sticky top-0 z-30 flex w-full items-center justify-between px-4 py-4 transition-all lg:px-10 ly:py-6">
    <div className="flex items-center justify-center md:w-1/5">
     <Link href={"/"}>
       <div className="relative h-10 w-5 cursor-pointer opacity-75 transition hover:opacity-100">
@@ -12,10 +12,10 @@ function Navbar() {
       </div>
     </Link>
    </div>
-   <div className="hidden flex-1 items-center justify-around space-x-8  md:flex"> 
-     <a className="headerLink font-sans">Service</a>
-     <a className="headerLink font-sans">Account</a>
-     <a className="headerLink font-sans">Beats</a>
+   <div className="hidden flex-1 items-center justify-around space-x-8  md:flex font-sans text-black transition duration-[.4s] hover:text-[#b3b3b3]"> 
+    <Link href={"/service"}>Service</Link>
+    <Link href={"/account"}>Account</Link>
+    <Link href={"/beats"}>Beats</Link>
    </div>
         <div className="flex items-center justify-center gap-x-4 md:w-1/5">
           <AiOutlineSearch className="navIcon" />
