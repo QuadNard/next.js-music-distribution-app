@@ -1,10 +1,10 @@
-import React from 'react'
 import Link from 'next/link'
 import {AiOutlineSearch, AiOutlineShopping } from 'react-icons/ai'
+import React from 'react'
 
-function Navbar() {
+export default function Navbar() {
   return (
-  <nav className="sticky top-0 z-30 flex w-full items-center justify-between px-4 py-4 transition-all lg:px-10 ly:py-6">
+  <nav className="sticky top-0 z-30 flex w-full items-center justify-between p-4">
    <div className="flex items-center justify-center md:w-1/5">
     <Link href={"/"}>
       <div className="relative h-10 w-5 cursor-pointer opacity-75 transition hover:opacity-100">
@@ -34,6 +34,3 @@ function Navbar() {
   )
 }
 
-export default Navbar
-
-      
