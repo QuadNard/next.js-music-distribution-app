@@ -1,14 +1,36 @@
+'use client';
+
 import Image from 'next/image'
 import { FaGoogle } from 'react-icons/fa'
 import { SlSocialSoundcloud, SlSocialSpotify } from 'react-icons/sl'
 import {AiOutlineMail} from 'react-icons/ai'
+import { useState } from 'react';
+import { SubmitHandler, useForm  } from 'react-hook-form';
+
+interface Inputs {
+    email: string
+    password: string
+}
 
 function Login() {
+    const [login, setLogin] = useState(false)
+
+    const {
+        register, 
+        handleSubmit,
+        watch,
+        formState: { errors },
+    } = useForm<Inputs>() 
+    const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data)
+   
+
     return (
        <div className='flex flex-col items-center justify-center min-h-screen py-2 bg-gradient-to-r  from-orange-300 to-orange-700'>
            <main className='flex  flex-col items-center  justify-center w-full flex-1 px-20 text-center'>
                 <div className=' bg-transparent rounded-2xl shadow-2xl flex w-2/3 max-w-4xl'>
-                <div className='w-3/5 p-5'>
+                <form
+                   onSubmit={handleSubmit(onSubmit)} 
+                className='w-3/5 p-5'>
                     <div className='text-left font-SF Fedora'>
                         <span className='text-black'>Beatsbymaad</span>
                     </div>
@@ -32,28 +54,25 @@ function Login() {
                             <div className='flex flex-col items-center'>
                             <div className='bg-gray-100 w-64 p-2 flex items-center mb-3'>
                                 <AiOutlineMail className='text-gray-400 mr-2' />
-                                <input type="email" name="email" placeholder="Email" className="bg-gray-100 outline-none font-sans text-sm 
-                                flex-1" />
+                                <input type="email"  placeholder="Email" className="bg-gray-100 outline-none font-sans text-sm 
+                                flex-1" {...register('email', { required: true })}/>
                                 </div> 
                                 <div className='bg-gray-100 w-64 p-2 flex items-center mb-3 '>
                                 <AiOutlineMail className='text-gray-400 mr-2' />
-                                <input type="email" name="password" placeholder="Password" className="bg-gray-100 outline-none font-sans text-sm 
-                                flex-1" />
+                                <input type="password" placeholder="Password" className="bg-gray-100 outline-none font-sans text-sm 
+                                flex-1" {...register('password', {required: true })} />
                                 </div>  
                                 <div className='flex justify-between w-64 mb-5'>
                                     <label className='flex items-center text-xs font-sans text-white'><input type="checkbox" name="remember" 
                                     className="mr-1" />Remember me</label>
                                     <a href="#" className="text-xs font-sans text-white">Forgot Password?</a>
                                     </div>    
-                                    <a 
-                                    href="#"
-                                    className="border-2 border-white text-white rounded-full px-12 py-2 inline-block font-sans hover:bg-white hover:text-orange-300"
-                                    >
-                                        Sign In
-                                    </a>                            
+                                   <button className='border-2 border-white text-white rounded-full px-12 py-2 inline-block font-sans hover:bg-white hover:text-orange-300'>
+                                        Sign In 
+                                    </button>                         
                             </div>
                     </div>
-                </div>
+                </form>
                  {/* Sign in section*/}
                 <div className='w-2/5 bg-amber-800 bg-gradient-to-r from-orange-300 to-amber-500 text-white rounded-tr-2xl  rounded-br-2xl py-36 px-12'>
                     <h2 className='text-3xl font-sans mb-2'>Hello, Friend!</h2>

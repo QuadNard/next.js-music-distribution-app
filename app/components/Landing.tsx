@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import Button from "./Button";
 
@@ -15,7 +16,8 @@ function Landing() {
         </h1>
 
         <div className="space-x-8">
-          <Button title="Login" />
+          <Link href={"/Login"}>  <Button title="Login" />
+          </Link>
           <a className="link font-sans">View pricing</a>
         </div>
       </div>
