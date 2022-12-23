@@ -16,7 +16,7 @@ function Landing() {
         </h1>
 
         <div className="space-x-8">
-          <Link href={"/Login"}>  <Button title="Login" />
+          <Link href={"/login"}>  <Button title="Login" />
           </Link>
           <a className="link font-sans">View pricing</a>
         </div>
